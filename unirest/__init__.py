@@ -101,7 +101,7 @@ def __request(method, url, params={}, headers={}, auth=None, callback=None):
             response = e
             _unirestResponse = UnirestResponse(response.code, response.headers, response.read())
         except urllib2.URLError, e:
-            return "error"
+            _unirestResponse = "error"
 
     if callback is None or callback == {}:
         return _unirestResponse
